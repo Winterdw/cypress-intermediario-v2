@@ -1,10 +1,11 @@
 describe('Login', () => {
-  beforeEach(()=>{    
-    cy.visit('http://localhost')
+  it('successfully', () => {
+    const user = Cypress.env('user_name')
+    const password = Cypress.env('user_password')
+    const options = { cacheSession: false }
 
-  })
-  it('login', () => {
-    cy.login()
+    cy.login(user, password, options)
+
     cy.get('.qa-user-avatar').should('be.visible')
-  })  
+  })
 })
