@@ -3,10 +3,8 @@ describe('Login', () => {
     cy.visit('http://localhost')
 
   })
-  it('successfully', () => {
+  it('login', () => {
     cy.login()
-    
-
     cy.get('.qa-user-avatar').should('be.visible')
-  })
+  })  
 })
